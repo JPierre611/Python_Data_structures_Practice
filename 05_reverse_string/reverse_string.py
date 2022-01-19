@@ -7,3 +7,6 @@ def reverse_string(phrase):
         >>> reverse_string('sauce')
         'ecuas'
     """
+    if type(phrase) is str:
+        return phrase[::-1]
+    return 'Phrase must be a string.'

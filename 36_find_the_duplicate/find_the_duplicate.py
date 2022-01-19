@@ -13,3 +13,9 @@ def find_the_duplicate(nums):
         >>> find_the_duplicate([2, 1, 3, 4]) is None
         True
     """
+
+    frequency = {num: nums.count(num) for num in nums}
+
+    for (k, v) in frequency.items():
+        if v == 2:
+            return k

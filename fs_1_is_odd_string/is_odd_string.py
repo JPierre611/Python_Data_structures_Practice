@@ -29,3 +29,9 @@ def is_odd_string(word):
     """
 
     # Hint: you may find the ord() function useful here
+
+    DIFF = ord('a') - 1
+
+    total = sum(ord(char) - DIFF for char in word.lower())
+
+    return total % 2 != 0

@@ -1,3 +1,6 @@
+from typing import List
+
+
 def list_manipulation(lst, command, location, value=None):
     """Mutate lst to add/remove from beginning or end.
 
@@ -40,3 +43,19 @@ def list_manipulation(lst, command, location, value=None):
         >>> list_manipulation(lst, 'add', 'dunno') is None
         True
     """
+
+    # Validate command and location.
+    if command not in ('remove', 'add') or location not in ('beginning', 'end'):
+        return None
+    if command == 'remove':
+        if location == 'beginning':
+            return lst.pop(0)
+        else:       # location = 'end'
+            return lst.pop()
+    else:       # command = 'add'
+        if location == 'beginning':
+            lst.insert(0, value)
+            return lst
+        else:       # location = 'end'
+            lst.append(value)
+            return lst
